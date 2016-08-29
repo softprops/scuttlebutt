@@ -3,7 +3,7 @@ extern crate serde_json;
 
 use hyper::{Client, Error as HttpError};
 use serde_json::StreamDeserializer;
- use std::io::Read;
+use std::io::Read;
 use std::sync::mpsc::{channel, Receiver};
 use std::thread;
 
@@ -72,6 +72,36 @@ impl Events for Cluster {
 
 #[cfg(test)]
 mod tests {
+    use super::*;
+    use std::sync::mpsc::Receiver;
+    use std::io::Read;
     #[test]
-    fn it_works() {}
+    fn events_generator() {
+        impl Events for &'static str {
+            fn events(&mut self) -> Result<Receiver<Event>> {
+                self.generator(self.bytes().into_iter().map(|b| Ok(b)))
+            }
+        }
+        let events = r#"{
+            "object":{
+                "apiVersion": "1",
+                "count": 1,
+                "firstTimestamp": "...",
+                "lastTimestamp": "...",
+                "kind":"POD",
+                "message":"test",
+                "involvedObject": {
+                    "apiVersion": "1",
+                    "kind": "POD",
+                    "name": "test_name",
+                    "namespace": "test_namespace"
+                }
+            },
+            "type":"ADDED"
+        }"#.events();
+        assert!(
+            events.unwrap().into_iter().take(1).map(|e| e.object.involved_object.namespace).nth(0)
+                == Some("test_namespace".to_owned())
+        )
+    }
 }
