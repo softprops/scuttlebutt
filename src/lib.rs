@@ -38,10 +38,15 @@ pub trait Events {
         thread::spawn(move || {
             for e in src {
                 match e {
-                    Ok(event) => tx.send(event).unwrap(),
+                    Ok(event) => match tx.send(event) {
+                        Err(e) => {
+                            println!("{:#?}", e);
+                            break
+                        },_ => ()
+                    },
                     Err(e) => {
                         println!("{:#?}", e);
-                        break;
+                        break
                     }
                 }
             }
