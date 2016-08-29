@@ -100,8 +100,11 @@ mod tests {
             "type":"ADDED"
         }"#.events();
         assert!(
-            events.unwrap().into_iter().take(1).map(|e| e.object.involved_object.namespace).nth(0)
-                == Some("test_namespace".to_owned())
+            events.unwrap()
+                .into_iter()
+                .map(|e| e.object.involved_object.namespace)
+                .nth(0)
+                    == Some("test_namespace".to_owned())
         )
     }
 }
