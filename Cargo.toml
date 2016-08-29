@@ -1,0 +1,14 @@
+[package]
+name = "scuttlebutt"
+version = "0.1.0"
+authors = ["softprops <d.tangren@gmail.com>"]
+
+build = "build.rs"
+
+[build-dependencies]
+serde_codegen = "0.8"
+
+[dependencies]
+hyper = "0.9"
+serde = "0.8"
+serde_json = "0.8"

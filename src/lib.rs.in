@@ -1,0 +1,32 @@
+#[derive(Serialize, Deserialize, Debug)]
+pub struct Event {
+    pub object: Object,
+    #[serde(rename = "type")]
+    pub event_type: String
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+pub struct Object {
+  #[serde(rename = "apiVersion")]
+  pub api_version: String,
+  pub count: usize,
+  #[serde(rename = "firstTimestamp")]
+  pub first_timestamp: String,
+  #[serde(rename = "lastTimestamp")]
+  pub last_timestamp: String,
+  #[serde(rename = "involvedObject")]
+  pub involved_object: InvoledObject,
+  pub kind: String,
+  pub message: String,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+pub struct InvoledObject {
+  #[serde(rename = "apiVersion")]
+  pub api_version: String,
+  #[serde(rename = "fieldPath")]
+  pub field_path: Option<String>,
+  pub kind: String,
+  pub name: String,
+  pub namespace: String
+}
