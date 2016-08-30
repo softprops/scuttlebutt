@@ -11,6 +11,7 @@ include!(concat!(env!("OUT_DIR"), "/lib.rs"));
 
 pub type Result<T> = std::result::Result<T, Error>;
 
+/// An enumerator of potential errors
 #[derive(Debug)]
 pub enum Error {
     Transport(HttpError),
@@ -22,10 +23,15 @@ impl From<HttpError> for Error {
     }
 }
 
+/// A cluster contains an address
+/// for interacting with a kubernetes Cluster
+/// of nodes
 pub struct Cluster {
     host: Url,
 }
 
+/// Events provides a means for generating
+/// a reciever for events
 pub trait Events {
     fn events(&mut self) -> Result<Receiver<Event>>;
 
