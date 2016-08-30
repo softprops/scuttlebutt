@@ -15,4 +15,4 @@ serde_json = "0.8"
 
 [[bin]]
 doc = false
-name = "scuttlebutt"
+name = "scuttlebuttr"
