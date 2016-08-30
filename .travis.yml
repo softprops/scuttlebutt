@@ -7,7 +7,7 @@ matrix:
   - rust: beta
   - rust: stable
 script:
-- RUSTFLAGS="$RUSTFLAGS -C link-dead-code" cargo test
+- RUSTFLAGS="$RUSTFLAGS -C link-dead-code" cargo test --lib
 cache:
   cargo: true
   apt: true
@@ -27,7 +27,6 @@ after_success: |
   [ $TRAVIS_RUST_VERSION = stable ] &&
   [ $TRAVIS_BRANCH = master ] &&
   [ $TRAVIS_PULL_REQUEST = false ] &&
-  RUSTFLAGS="$RUSTFLAGS -C link-dead-code" cargo test --no-run &&
   wget https://github.com/SimonKagstrom/kcov/archive/master.tar.gz &&
   tar xzf master.tar.gz &&
   mkdir kcov-master/build &&
