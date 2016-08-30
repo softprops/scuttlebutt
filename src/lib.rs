@@ -7,7 +7,7 @@ use std::io::Read;
 use std::sync::mpsc::{channel, Receiver};
 use std::thread;
 
-include!(concat!(env!("OUT_DIR"), "/main.rs"));
+include!(concat!(env!("OUT_DIR"), "/lib.rs"));
 
 pub type Result<T> = std::result::Result<T, Error>;
 
