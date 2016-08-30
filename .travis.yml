@@ -8,7 +8,7 @@ matrix:
   - rust: stable
 script:
 - cargo build
-- cargo test
+- RUSTFLAGS='-C link-dead-code' cargo test
 cache:
   cargo: true
   apt: true
