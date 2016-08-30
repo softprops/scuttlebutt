@@ -7,7 +7,7 @@ matrix:
   - rust: beta
   - rust: stable
 script:
-- cargo build
+- RUSTFLAGS='-C link-dead-code' cargo build
 - RUSTFLAGS='-C link-dead-code' cargo test
 cache:
   cargo: true
