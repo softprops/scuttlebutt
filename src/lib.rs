@@ -1,7 +1,7 @@
 extern crate hyper;
 extern crate serde_json;
 
-use hyper::{Client, Error as HttpError};
+use hyper::{Client, Error as HttpError, Url};
 use serde_json::StreamDeserializer;
 use std::io::Read;
 use std::sync::mpsc::{channel, Receiver};
@@ -23,7 +23,7 @@ impl From<HttpError> for Error {
 }
 
 pub struct Cluster {
-    host: String,
+    host: Url,
 }
 
 pub trait Events {
@@ -57,14 +57,14 @@ pub trait Events {
 
 impl Cluster {
     pub fn new() -> Cluster {
-        Cluster { host: "http://localhost:8001".to_owned() }
+        Cluster { host: Url::parse("http://localhost:8001").unwrap() }
     }
 }
 
 impl Events for Cluster {
     fn events(&mut self) -> Result<Receiver<Event>> {
         let res = try!(Client::new()
-            .get(&format!("{}/api/v1/events?watch=true", self.host))
+            .get(self.host.join("/api/v1/events?watch=true").unwrap())
             .send());
         self.generator(res.bytes())
     }
