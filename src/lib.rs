@@ -40,15 +40,15 @@ pub trait Events {
               Iter: Send + 'static
     {
         let (tx, rx) = channel();
-        let src: StreamDeserializer<Event, _> = StreamDeserializer::new(iter);
+        let stream: StreamDeserializer<Event, _> = StreamDeserializer::new(iter);
         thread::spawn(move || {
-            for e in src {
+            for e in stream {
                 match e {
-                    Ok(event) => match tx.send(event) {
-                        Err(e) => {
+                    Ok(event) => {
+                        if let Err(e) = tx.send(event) {
                             println!("{:#?}", e);
                             break
-                        },_ => ()
+                        }
                     },
                     Err(e) => {
                         println!("{:#?}", e);
