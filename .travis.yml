@@ -27,8 +27,7 @@ after_success: |
   [ $TRAVIS_RUST_VERSION = stable ] &&
   [ $TRAVIS_BRANCH = master ] &&
   [ $TRAVIS_PULL_REQUEST = false ] &&
-  wget https://github.com/SimonKagstrom/kcov/archive/master.tar.gz &&
-  tar xzf master.tar.gz &&
+  curl -L https://github.com/SimonKagstrom/kcov/archive/master.tar.gz | tar xz &&
   mkdir kcov-master/build &&
   cd kcov-master/build &&
   cmake .. &&
