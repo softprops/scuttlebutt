@@ -9,6 +9,8 @@ use std::thread;
 
 include!(concat!(env!("OUT_DIR"), "/lib.rs"));
 
+const DEFAULT_HOST: &'static str = "http://localhost:8001";
+
 pub type Result<T> = std::result::Result<T, Error>;
 
 /// An enumerator of potential errors
@@ -63,7 +65,7 @@ pub trait Events {
 
 impl Cluster {
     pub fn new() -> Cluster {
-        Cluster { host: Url::parse("http://localhost:8001").unwrap() }
+        Cluster { host: Url::parse(DEFAULT_HOST).unwrap() }
     }
 }
 
