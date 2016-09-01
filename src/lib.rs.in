@@ -18,6 +18,32 @@ pub struct Object {
   pub involved_object: InvoledObject,
   pub kind: String,
   pub message: String,
+  pub metadata: Metadata,
+  pub reason: String,
+  pub source: Source,
+  #[serde(rename = "type")]
+  pub object_type: String
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+pub struct Metadata {
+  #[serde(rename = "creationTimestamp")]
+  pub creation_timestamp: String,
+  #[serde(rename = "deletionTimestamp")]
+  pub deletion_timestamp: String,
+  pub name: String,
+  pub namespace: String,
+  #[serde(rename = "resourceVersion")]
+  pub resource_version: String,
+  #[serde(rename = "selfLink")]
+  self_link: String,
+  uid: String
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+pub struct Source {
+  pub component: String,
+  pub host: String
 }
 
 #[derive(Serialize, Deserialize, Debug)]

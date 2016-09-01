@@ -4,7 +4,7 @@ use scuttlebutt::{Cluster, Events};
 fn main() {
     match Cluster::new().events() {
            Ok(events) => {
-               for e in events.into_iter().take(1) {
+               for e in events.into_iter() {
                    println!("{:#?}", e)
                }
            }

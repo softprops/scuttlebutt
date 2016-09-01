@@ -96,14 +96,29 @@ mod tests {
                 "count": 1,
                 "firstTimestamp": "...",
                 "lastTimestamp": "...",
-                "kind":"POD",
+                "kind":"Event",
                 "message":"test",
                 "involvedObject": {
                     "apiVersion": "1",
                     "kind": "POD",
                     "name": "test_name",
                     "namespace": "test_namespace"
-                }
+                },
+                "metadata": {
+                    "creationTimestamp": "...",
+                    "deletionTimestamp": "...",
+                    "name": "test",
+                    "namespace":"default",
+                    "resourceVersion": "1",
+                    "selfLink": "...",
+                    "uid": "1"
+                },
+                "reason": "started",
+                "source": {
+                    "component": "test",
+                    "host": "foo.com"
+                },
+                "type": "Normal"
             },
             "type":"ADDED"
         }"#.events();
