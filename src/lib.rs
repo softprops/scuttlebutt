@@ -1,3 +1,5 @@
+#[macro_use]
+extern crate log;
 extern crate hyper;
 extern crate serde_json;
 
@@ -48,12 +50,12 @@ pub trait Events {
                 match e {
                     Ok(event) => {
                         if let Err(e) = tx.send(event) {
-                            println!("{:#?}", e);
+                            debug!("{:#?}", e);
                             break
                         }
                     },
                     Err(e) => {
-                        println!("{:#?}", e);
+                        debug!("{:#?}", e);
                         break
                     }
                 }
