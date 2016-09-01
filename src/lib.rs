@@ -1,3 +1,8 @@
+//! # Scuttlebutt
+//!
+//! Scuttlebutt is an interface for consuming a stream of kubernetes
+//! cluster events to act on
+
 #[macro_use]
 extern crate log;
 extern crate hyper;
@@ -15,7 +20,7 @@ const DEFAULT_HOST: &'static str = "http://localhost:8001";
 
 pub type Result<T> = std::result::Result<T, Error>;
 
-/// An enumerator of potential errors
+/// An enumeratation of potential errors
 #[derive(Debug)]
 pub enum Error {
     Transport(HttpError),
