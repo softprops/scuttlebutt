@@ -5,6 +5,13 @@
 
 [Documentation](https://softprops.github.io/scuttlebutt)
 
+## install
+
+```toml
+[dependencies]
+scuttlebutt = "0.1"
+```
+
 ## usage
 
 Central to scuttlebutt is a cluster. Clusters provide an interface for feeding off of kubernetes events
