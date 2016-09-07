@@ -6,10 +6,10 @@
 
 ## usage
 
-Central to scuttlebut is a cluster. Clusters provide an interface for feeding off of kubernetes events
+Central to scuttlebutt is a cluster. Clusters provide an interface for feeding off of kubernetes events
 via a [Receiver](https://doc.rust-lang.org/std/sync/mpsc/struct.Receiver.html).
 
-The default use case is to connect to a kubernetes cluster behind kubeproxy. This interface may be extended to run
+The default use case is to connect to a kubernetes cluster behind [kube-proxy](http://kubernetes.io/docs/admin/kube-proxy/). This interface may be extended to run
 outside a cluster with a set of [kubeconfig credentials](https://github.com/softprops/kubecfg) in the future.
 
 ```rust
