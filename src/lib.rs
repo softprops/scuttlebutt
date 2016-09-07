@@ -107,6 +107,8 @@ mod tests {
                 "message":"test",
                 "involvedObject": {
                     "apiVersion": "1",
+                    "resourceVersion": "2",
+                    "uid":"2",
                     "kind": "POD",
                     "name": "test_name",
                     "namespace": "test_namespace"
