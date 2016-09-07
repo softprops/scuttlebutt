@@ -2,7 +2,7 @@
 
 > Listen in on all on the gossip going on in your [kubernetes](http://kubernetes.io/) cluster
 
-[Documentation](softprops.github.io/scuttlebutt)
+[Documentation](https://softprops.github.io/scuttlebutt)
 
 ## usage
 
