@@ -40,7 +40,7 @@ pub struct Cluster {
 }
 
 /// Events provides a means for generating
-/// a reciever for events
+/// a receiver for events
 pub trait Events {
     fn events(&mut self) -> Result<Receiver<Event>>;
 
