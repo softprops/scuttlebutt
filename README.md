@@ -7,6 +7,8 @@
 
 ## install
 
+Add the following to your Cargo.toml file
+
 ```toml
 [dependencies]
 scuttlebutt = "0.1"
