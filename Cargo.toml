@@ -2,6 +2,12 @@
 name = "scuttlebutt"
 version = "0.1.0"
 authors = ["softprops <d.tangren@gmail.com>"]
+description = "A Rust interface for kubernetes events"
+documentation = "https://softprops.github.io/scuttlebutt"
+homepage = "https://github.com/softprops/scuttlebutt"
+repository = "https://github.com/softprops/scuttlebutt"
+keywords = ["kubernetes", "k8s", "hyper"]
+license = "MIT"
 build = "build.rs"
 
 
