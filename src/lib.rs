@@ -1,7 +1,7 @@
 //! # Scuttlebutt
 //!
-//! Scuttlebutt is an interface for consuming a stream of kubernetes
-//! cluster events to act on
+//! Scuttlebutt is an interface for extending kubernetes by feeding off a stream of kubernetes
+//! cluster events
 
 #[macro_use]
 extern crate log;
@@ -56,12 +56,12 @@ pub trait Events {
                     Ok(event) => {
                         if let Err(e) = tx.send(event) {
                             debug!("{:#?}", e);
-                            break
+                            break;
                         }
-                    },
+                    }
                     Err(e) => {
                         debug!("{:#?}", e);
-                        break
+                        break;
                     }
                 }
             }
@@ -128,13 +128,11 @@ mod tests {
                 "type": "Normal"
             },
             "type":"ADDED"
-        }"#.events();
-        assert!(
-            events.unwrap()
-                .into_iter()
-                .map(|e| e.object.involved_object.namespace)
-                .nth(0)
-                    == Some("test_namespace".to_owned())
-        )
+        }"#
+            .events();
+        assert!(events.unwrap()
+            .into_iter()
+            .map(|e| e.object.involved_object.namespace)
+            .nth(0) == Some("test_namespace".to_owned()))
     }
 }
