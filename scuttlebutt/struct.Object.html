@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Object` struct in crate `scuttlebutt`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Object">
+
+    <title>scuttlebutt::Object - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>scuttlebutt</a></p><script>window.sidebarCurrent = {name: 'Object', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>scuttlebutt</a>::<wbr><a class='struct' href=''>Object</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-392' class='srclink' href='../src/scuttlebutt/home/travis/build/softprops/scuttlebutt/target/debug/build/scuttlebutt-68c75af261807d59/out/lib.rs.html#646-669' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Object {
+    pub api_version: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    pub count: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>,
+    pub first_timestamp: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    pub last_timestamp: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    pub involved_object: <a class='struct' href='../scuttlebutt/struct.ObjectReference.html' title='scuttlebutt::ObjectReference'>ObjectReference</a>,
+    pub kind: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    pub message: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    pub metadata: <a class='struct' href='../scuttlebutt/struct.ObjectMeta.html' title='scuttlebutt::ObjectMeta'>ObjectMeta</a>,
+    pub reason: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+    pub source: <a class='struct' href='../scuttlebutt/struct.EventSource.html' title='scuttlebutt::EventSource'>EventSource</a>,
+    pub object_type: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+}</pre><div class='docblock'><p>A description of the event</p>
+</div><h2 class='fields'>Fields</h2><span id='structfield.api_version' class='structfield'><code>api_version: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: <a href="http://releases.k8s.io/release-1.3/docs/devel/api-conventions.md#resources">http://releases.k8s.io/release-1.3/docs/devel/api-conventions.md#resources</a></p>
+</div><span id='structfield.count' class='structfield'><code>count: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>The number of times this event has occurred.</p>
+</div><span id='structfield.first_timestamp' class='structfield'><code>first_timestamp: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>The time at which the event was first recorded. (Time of server receipt is in TypeMeta.)</p>
+</div><span id='structfield.last_timestamp' class='structfield'><code>last_timestamp: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>The time at which the most recent occurrence of this event was recorded.</p>
+</div><span id='structfield.involved_object' class='structfield'><code>involved_object: <a class='struct' href='../scuttlebutt/struct.ObjectReference.html' title='scuttlebutt::ObjectReference'>ObjectReference</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>The object that this event is about.</p>
+</div><span id='structfield.kind' class='structfield'><code>kind: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: <a href="http://releases.k8s.io/release-1.3/docs/devel/api-conventions.md#types-kinds">http://releases.k8s.io/release-1.3/docs/devel/api-conventions.md#types-kinds</a></p>
+</div><span id='structfield.message' class='structfield'><code>message: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>A human-readable description of the status of this operation.</p>
+</div><span id='structfield.metadata' class='structfield'><code>metadata: <a class='struct' href='../scuttlebutt/struct.ObjectMeta.html' title='scuttlebutt::ObjectMeta'>ObjectMeta</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>Standard object’s metadata. More info: <a href="http://releases.k8s.io/release-1.3/docs/devel/api-conventions.md#metadata">http://releases.k8s.io/release-1.3/docs/devel/api-conventions.md#metadata</a></p>
+</div><span id='structfield.reason' class='structfield'><code>reason: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>This should be a short, machine understandable string that gives the reason for the transition into the object’s current status.</p>
+</div><span id='structfield.source' class='structfield'><code>source: <a class='struct' href='../scuttlebutt/struct.EventSource.html' title='scuttlebutt::EventSource'>EventSource</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>The component reporting this event. Should be a short machine understandable string.</p>
+</div><span id='structfield.object_type' class='structfield'><code>object_type: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code>
+                           </span><span class='stab '></span><div class='docblock'><p>Type of this event (Normal, Warning), new types could be added in the future</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../scuttlebutt/struct.Object.html' title='scuttlebutt::Object'>Object</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-376' class='srclink' href='../src/scuttlebutt/home/travis/build/softprops/scuttlebutt/target/debug/build/scuttlebutt-68c75af261807d59/out/lib.rs.html#645' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "scuttlebutt";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>
