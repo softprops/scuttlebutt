@@ -8,16 +8,16 @@ homepage = "https://github.com/softprops/scuttlebutt"
 repository = "https://github.com/softprops/scuttlebutt"
 keywords = ["kubernetes", "k8s", "hyper"]
 license = "MIT"
-build = "build.rs"
 
 [build-dependencies]
 serde_codegen = "0.8"
 
 [dependencies]
 log = "0.3"
-hyper = "0.9"
-serde = "0.8"
-serde_json = "0.8"
+hyper = "0.10"
+serde = "0.9"
+serde_json = "0.9"
+serde_derive = "0.9"
 
 [[bin]]
 doc = false
