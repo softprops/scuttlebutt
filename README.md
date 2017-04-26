@@ -11,7 +11,7 @@ Add the following to your Cargo.toml file
 
 ```toml
 [dependencies]
-scuttlebutt = "0.1"
+scuttlebutt = "0.2"
 ```
 
 ## usage
@@ -38,4 +38,4 @@ fn main() {
 }
 ```
 
-Doug Tangren (softprops) 2016
+Doug Tangren (softprops) 2016-2017
