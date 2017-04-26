@@ -237,7 +237,6 @@ impl Events for Cluster {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use std::io::Read;
     use std::sync::mpsc::Receiver;
     #[test]
     fn events_generator() {
