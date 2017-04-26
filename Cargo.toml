@@ -9,9 +9,6 @@ repository = "https://github.com/softprops/scuttlebutt"
 keywords = ["kubernetes", "k8s", "hyper"]
 license = "MIT"
 
-[build-dependencies]
-serde_codegen = "0.8"
-
 [dependencies]
 log = "0.3"
 hyper = "0.10"
