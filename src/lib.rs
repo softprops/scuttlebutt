@@ -218,7 +218,6 @@ pub trait Events {
 
 impl Cluster {
     pub fn new() -> Cluster {
-        /// The API host to be used for communication. https://kubernetes.default:443
         let kubernetes_api_host: &str = &env::var("KUBERNETES_API_HOST").expect("KUBERNETES_API_HOST not set.");
         Cluster { host: Url::parse(kubernetes_api_host).unwrap() }
     }
