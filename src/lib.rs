@@ -11,6 +11,7 @@ extern crate serde_json;
 extern crate serde_derive;
 
 use hyper::{Client, Error as HttpError, Url};
+use std::env;
 use std::io::{self, Read};
 use std::sync::mpsc::{channel, Receiver};
 use std::thread;
@@ -162,8 +163,6 @@ pub struct ObjectReference {
     pub namespace: String,
 }
 
-const DEFAULT_HOST: &'static str = "http://localhost:8001";
-
 pub type Result<T> = std::result::Result<T, Error>;
 
 /// An enumeratation of potential errors
@@ -219,7 +218,9 @@ pub trait Events {
 
 impl Cluster {
     pub fn new() -> Cluster {
-        Cluster { host: Url::parse(DEFAULT_HOST).unwrap() }
+        /// The API host to be used for communication. https://kubernetes.default:443
+        let kubernetes_api_host: &str = &env::var("KUBERNETES_API_HOST").expect("KUBERNETES_API_HOST not set.");
+        Cluster { host: Url::parse(kubernetes_api_host).unwrap() }
     }
 }
 
